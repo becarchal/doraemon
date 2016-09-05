@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>html5 canvas 哆啦A梦开心果</title>
+    <style type="text/css">
+    #canvas{margin:100px auto; display: block;}
+    .tb960x90 {display:none!important;display:none}
+	</style>
+</head>
+<body>
+<canvas id="canvas" height="600" width="700" style="border: 1px solid #000;"></canvas>
+<script type="text/javascript">
+
+	window.onload=function(){
+		var ctx=document.getElementById('canvas').getContext('2d');
+		//头
+		ctx.beginPath();
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = "black";
+		ctx.arc(200,175,175,0.7*Math.PI,0.3*Math.PI);
+		ctx.fillStyle="#16B3DC";
+		ctx.fill();
+		ctx.stroke();
+		//脸框
+		ctx.beginPath();
+		ctx.fillStyle="white";
+		ctx.moveTo(125,75);
+		ctx.quadraticCurveTo(-10,185,120,315);
+		ctx.lineTo(280,315);
+		ctx.quadraticCurveTo(410,185,275,75);
+		ctx.lineTo(120,80);
+		ctx.fill();
+		ctx.stroke();
+		//眼睛
+		ctx.beginPath();
+		ctx.lineWidth=1;
+		ctx.fillStyle="white";
+		ctx.moveTo(120,80);
+		ctx.bezierCurveTo(120,5,200,5,195,80);
+		ctx.bezierCurveTo(195,135,125,135,120,80);
+
+		ctx.moveTo(200,80);
+		ctx.bezierCurveTo(195,5,275,5,275,80);
+		ctx.bezierCurveTo(270,135,205,135,200,80);
+		ctx.fill();
+		ctx.stroke();
+		
+		//眼珠
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.lineWidth = "3";
+		ctx.moveTo(150, 90);
+		ctx.quadraticCurveTo(165, 50, 185, 90);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(210,82);
+		ctx.bezierCurveTo(205,55,235,55,233,82);
+		ctx.bezierCurveTo(230,102,215,102,210,82);
+		ctx.fillStyle="black";
+		ctx.fill();
+		ctx.stroke();
+
+		var radial = ctx.createRadialGradient(217,77,3,218,77.5,10);
+		radial.addColorStop(0,"white");
+		radial.addColorStop(1,"black");
+		ctx.fillStyle=radial;
+		ctx.fill();
+		ctx.stroke();
+
+		//鼻子
+		ctx.beginPath();
+		ctx.lineWidth = "1";
+		ctx.arc(200,133,25,0,2*Math.PI);
+		var radial = ctx.createRadialGradient(208,125,3,204,132,14);
+		radial.addColorStop(0,"white");
+		radial.addColorStop(1,"#E50112");
+		ctx.fillStyle=radial;
+    	ctx.fill();
+		ctx.stroke();
+		//嘴巴
+		
+		ctx.beginPath();
+		ctx.moveTo(75, 185);
+		ctx.bezierCurveTo(100, 350, 310, 350, 320, 185);
+		ctx.fillStyle = "#E70010";
+		ctx.fill();
+		ctx.stroke();
+
+
+		ctx.beginPath();
+		ctx.moveTo(95, 155);
+		ctx.lineTo(80, 150);
+		ctx.bezierCurveTo(30, 145, 30, 215, 70, 220);
+		ctx.bezierCurveTo(170, 220, 130, 203, 197, 205);
+		ctx.lineTo(225, 205);
+		ctx.bezierCurveTo(280, 215, 260, 230, 340, 216);
+		ctx.bezierCurveTo(350, 215, 390, 160, 330, 150);
+		ctx.quadraticCurveTo(310, 150, 305, 160);
+		ctx.lineWidth = "1";
+		ctx.strokeStyle = "#000";
+		ctx.fillStyle = "#fff";
+		ctx.fill();
+		ctx.stroke();
+
+		//三须
+		ctx.beginPath();
+		ctx.moveTo(85,135);
+		ctx.lineTo(170,155);
+		ctx.moveTo(75,175);
+		ctx.lineTo(165,175);
+		ctx.moveTo(75,200);
+		ctx.lineTo(168,190);
+
+		ctx.moveTo(200,156);
+		ctx.lineTo(200,205);
+
+		ctx.moveTo(240,155);
+		ctx.lineTo(320,135);
+		ctx.moveTo(238,175);
+		ctx.lineTo(320,175);
+		ctx.moveTo(235,185);
+		ctx.lineTo(315,205);
+		ctx.moveTo(80,240);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(96,316);
+		ctx.lineTo(305,316);
+
+		ctx.lineTo(320,316);
+		ctx.arcTo(330,316,330,326,10);
+		ctx.lineTo(330,336);
+		ctx.arcTo(330,346,305,346,10);
+		ctx.lineTo(81,346);
+		ctx.arcTo(71,346,71,336,10);
+		ctx.lineTo(71,326);
+		ctx.arcTo(71,316,81,316,10);
+		ctx.lineTo(96,316);
+		var neck = ctx.createLinearGradient(96,316,305,316);
+		neck.addColorStop(0,"#B13209");
+		neck.addColorStop(1,"white");
+		ctx.fillStyle=neck;
+    	ctx.fill();
+		ctx.stroke();
+
+		/*舌头*/
+		ctx.beginPath();
+		ctx.moveTo(145, 295);
+		ctx.bezierCurveTo(180, 312, 218, 312, 260, 295);
+		ctx.bezierCurveTo(260, 280, 220, 280, 198, 288);
+		ctx.bezierCurveTo(170, 275, 155, 279, 145, 295);
+		ctx.strokeStyle = "#000";
+		ctx.fillStyle = "#E56D29";
+		ctx.fill();
+		ctx.stroke();
+
+		//下身
+		ctx.beginPath();
+		ctx.fillStyle="#0BB0DA";
+		ctx.moveTo(80,346);
+		ctx.lineTo(26,406);
+		ctx.lineTo(65,440);
+		ctx.lineTo(85,415);
+		ctx.lineTo(85,378);
+		ctx.lineTo(85,528);
+		ctx.lineTo(185,528);
+		ctx.bezierCurveTo(185,505,215,505,215,528);
+		ctx.lineTo(315,528);
+		ctx.lineTo(315,388);
+		ctx.lineTo(315,418);
+		ctx.lineTo(447,275);
+		ctx.lineTo(387,266);
+		ctx.lineTo(320,346);
+    	ctx.fill();
+		ctx.stroke();
+		//左手掌
+		ctx.beginPath();
+		ctx.fillStyle='white';
+		ctx.arc(32,438,32,0,2*Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		//右手掌
+		ctx.beginPath();
+		ctx.fillStyle='white';
+		ctx.arc(418,265,32,0,2*Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		//肚兜
+		ctx.beginPath();
+		ctx.fillStyle="white";
+		ctx.arc(200,399,90,1.8*Math.PI,1.2*Math.PI);
+		ctx.fill();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(130,399);
+		ctx.lineTo(270,399);
+		ctx.bezierCurveTo(270,489,130,489,130,399);
+		ctx.stroke();
+		//胸前铃铛
+		ctx.beginPath();
+		ctx.arc(200,358,28,0,2*Math.PI);
+		var neck = ctx.createRadialGradient(220,340,0,200,358,30);
+		neck.addColorStop(0,"white");
+		neck.addColorStop(1,"#FFD60E");
+		ctx.fillStyle=neck;
+    	ctx.fill();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(176,344);
+		ctx.lineTo(224,344);
+		ctx.moveTo(173,349);
+		ctx.lineTo(226,349);
+		ctx.moveTo(200,367);
+		ctx.lineTo(200,387);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.fillStyle="#7F7B6A";
+		ctx.arc(200,363,8,0,2*Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		//左脚
+		ctx.beginPath();
+		ctx.moveTo(85,528),
+		ctx.lineTo(75,528),
+		ctx.bezierCurveTo(50,528,50,562,75,577);
+		ctx.lineTo(155,577);
+		ctx.bezierCurveTo(200,574,200,528,185,528);
+		ctx.stroke();
+		//右脚
+		ctx.beginPath();
+		ctx.moveTo(215,528),
+		ctx.bezierCurveTo(196,528,196,562,235,577);
+		ctx.lineTo(320,577);
+		ctx.bezierCurveTo(330,577,370,528,325,528);
+		ctx.lineTo(315,528);
+		ctx.stroke();
+		//文本
+		var  mygradient=ctx.createLinearGradient(450, 100, 700, 100);
+		mygradient.addColorStop(0,"red");
+		mygradient.addColorStop(1,"blue");
+		ctx.fillStyle = mygradient;
+		ctx.font = "40px 隶书";
+		ctx.fillText("哆啦A梦开心果", 430, 100);
+		ctx.font = "30px 微软雅黑";
+		ctx.fillText("canvas作品", 470, 150);
+	}
+	function round(ctx,x,y){
+		ctx.arc(x,y,12,0,2*Math.PI);
+	}
+	// round();
+	
+
+	
+</script>
+
+	
+</body>
+</html>
